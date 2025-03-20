@@ -1,21 +1,19 @@
 import React from 'react';
-import { aboutContent } from '../data'; // import content
+import { aboutContent } from '../data';
 
 const About = () => {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center bg-gray-50">
+    <section id="about" className="min-h-screen flex items-center justify-center bg-gray-50 px-4 pt-12 sm:pt-16">
       <div className="max-w-4xl mx-auto text-center p-6">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">{aboutContent.title}</h2>
-        <p className="text-gray-600 text-lg leading-relaxed">
-          {aboutContent.description}
-        </p>
-        <p className="text-gray-600 text-lg leading-relaxed mt-4">
-          {aboutContent.expertise}
-        </p>
-        <div className="mt-6 space-x-4">
+        <p className="text-gray-600 text-lg leading-relaxed">{aboutContent.description}</p>
+        <p className="text-gray-600 text-lg leading-relaxed mt-4">{aboutContent.expertise}</p>
+        
+        {/* Button Container */}
+        <div className="mt-6 space-y-4 sm:space-y-0 sm:flex sm:space-x-4">
           <a
             href="#projects"
-            className="inline-block px-6 py-3 text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition"
+            className="inline-block px-6 py-3 text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition w-full sm:w-auto"
           >
             View My Work
           </a>
@@ -24,7 +22,7 @@ const About = () => {
             href={aboutContent.resumeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-3 text-white bg-gray-800 rounded-lg hover:bg-gray-900 transition"
+            className="inline-block px-6 py-3 text-white bg-gray-800 rounded-lg hover:bg-gray-900 transition w-full sm:w-auto"
           >
             View My Resume
           </a>

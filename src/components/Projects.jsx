@@ -1,20 +1,36 @@
 import React from "react";
+import { useDarkMode } from "../context/themeContext";
 import { projects } from "../data";
 
 const Projects = () => {
+  const { darkMode } = useDarkMode();
+
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section
+      id="projects"
+      className={`py-20 ${
+        darkMode ? "bg-gray-800 text-white border-t-4 border-gray-700" : "bg-white text-gray-800"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center">
+        <h2
+          className={`text-3xl font-bold mb-12 text-center ${
+            darkMode ? "text-white" : "text-gray-800"
+          }`}
+        >
           My Projects
         </h2>
 
-        {/*Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* Container */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition-all duration-300 ease-in-out"
+              className={`${
+                darkMode
+                  ? "bg-gray-800 text-white shadow-lg hover:shadow-2xl border-1 border-gray-700"
+                  : "bg-white text-gray-800 shadow-lg hover:shadow-2xl"
+              } rounded-xl p-6 transition-all duration-300 ease-in-out`}
             >
               {/* Project Content */}
               <div className="flex flex-col items-center justify-between">
@@ -25,18 +41,33 @@ const Projects = () => {
                   rel="noopener noreferrer"
                   className="cursor-pointer text-center"
                 >
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                  <h3
+                    className={`text-2xl font-semibold mb-4 ${
+                      darkMode ? "text-white" : "text-gray-800"
+                    }`}
+                  >
                     {project.title}
                   </h3>
                 </a>
 
                 {/* Description */}
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p
+                  className={`${
+                    darkMode ? "text-gray-300" : "text-gray-600"
+                  } mb-4`}
+                >
+                  {project.description}
+                </p>
 
                 {/* Details */}
                 <div className="space-y-2">
                   {project.details.map((detail, idx) => (
-                    <p key={idx} className="text-gray-600">
+                    <p
+                      key={idx}
+                      className={`${
+                        darkMode ? "text-gray-300" : "text-gray-600"
+                      }`}
+                    >
                       <span className="font-semibold text-blue-500">•</span>{" "}
                       {detail}
                     </p>
@@ -45,14 +76,20 @@ const Projects = () => {
 
                 {/* Tech Used */}
                 <div className="mt-4 text-center">
-                  <h4 className="text-lg font-medium text-gray-700 mb-2">
+                  <h4
+                    className={`text-lg font-medium mb-2 ${
+                      darkMode ? "text-gray-200" : "text-gray-700"
+                    }`}
+                  >
                     Tech Used
                   </h4>
-                  <div className="flex flex-wrap gap-4 justify-center text-gray-600">
+                  <div className="flex flex-wrap gap-4 justify-center">
                     {project.techUsed.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="bg-gray-200 px-4 py-1 rounded-full text-sm"
+                        className={`${
+                          darkMode ? "bg-gray-700 text-white" : "bg-gray-200"
+                        } px-4 py-1 rounded-full text-sm`}
                       >
                         {tech}
                       </span>
@@ -66,7 +103,9 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block text-blue-500 hover:underline cursor-pointer"
+                    className={`inline-block text-blue-500 hover:underline ${
+                      darkMode ? "hover:text-white" : "hover:text-blue-600"
+                    }`}
                   >
                     GitHub
                   </a>
@@ -74,7 +113,9 @@ const Projects = () => {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block text-blue-500 hover:underline cursor-pointer"
+                    className={`inline-block text-blue-500 hover:underline ${
+                      darkMode ? "hover:text-white" : "hover:text-blue-600"
+                    }`}
                   >
                     Live Demo
                   </a>

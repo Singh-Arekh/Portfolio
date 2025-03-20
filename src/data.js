@@ -83,10 +83,6 @@ export const contactContent = {
         label: "8120443338",
       },
       {
-        image: "https://img.icons8.com/?size=100&id=53435&format=png&color=000000",
-        label: "singharekh@gmail.com",
-      },
-      {
         image: "https://img.icons8.com/?size=100&id=13930&format=png&color=000000",
         label: "LinkedIn",
         link: "https://www.linkedin.com/in/arekh-singh-gohil-06650b193/",
@@ -99,6 +95,10 @@ export const contactContent = {
         link: "https://github.com/Singh-Arekh/",
         target: "_blank",
         rel: "noopener noreferrer",
+      },
+      {
+        image: "https://img.icons8.com/?size=100&id=53435&format=png&color=000000",
+        label: "singharekh@gmail.com",
       },
     ],
   };
